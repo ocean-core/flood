@@ -60,12 +60,12 @@ sequenceDiagram
         Controller->>Diagnostics: 计算诊断变量
         Controller->>IO: 写入输出数据
         
-        alt 需要重启文件
+        opt 需要重启文件
             Controller->>IO: 写入重启文件
         end
         
-        alt 模拟结束
-            break 退出循环
+        opt 模拟结束
+            Controller-->>Controller: 退出循环
         end
     end
     
